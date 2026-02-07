@@ -1,0 +1,84 @@
+<!--  The doctype is a required preamble. In the mists of time, when HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. -->
+<!doctype html>
+
+<!--  The <html> element wraps all the content on the entire page and is sometimes known as the root element. It also includes the lang attribute, which sets the primary language of the document. -->
+<html lang="en-US">
+  <!-- 
+    <head></head>: The <head> element acts as a container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's viewers. This includes things like keywords and a page description that you want to appear in search results, CSS to style the content, character set declarations, and more.
+  -->
+  <head>
+    <!-- This element sets the character set your document should use to UTF-8, which includes most characters from the vast majority of written languages. Essentially, it can now handle any textual content you might put on it. There is no reason not to set this, and it can help avoid some problems later on. -->
+    <meta charset="utf-8" />
+
+    <!-- <meta name="viewport" content="width=device-width">: This viewport element ensures the page renders at the width of the browser viewport, preventing mobile browsers from rendering pages wider than the viewport and then shrinking them down.
+    -->
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- <title></title>: The <title> element sets the title of your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page when you bookmark/favorite it.
+     -->
+    <title>Counter</title>
+    <!-- <link rel="icon" type="image/png" href="logo.png" /> -->
+    <!-- <link href="style.css" /> -->
+    <style>
+      .counter-btn {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <!-- The <body> element contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else. At the moment it only contains a single <img> element, but we'll add more content later on.
+ -->
+
+  <body>
+    <h1>Counter</h1>
+    <p id="COUNTER-VALUE">0</p>
+    <button id="INCREMENT-BTN" class="counter-btn">Increment</button>
+    <button id="DECREMENT-BTN" class="counter-btn">Decrement</button>
+    <p>Logs History</p>
+    <ol id="LOGS-HISTORY"></ol>
+
+    <script>
+      let counter = localStorage.getItem("count") || 0;
+      const counterValue = document.getElementById("COUNTER-VALUE");
+      counterValue.textContent = counter;
+
+      const incrementBtn = document.getElementById("INCREMENT-BTN");
+      const decrementBtn = document.getElementById("DECREMENT-BTN");
+
+      function log() {
+        const logsHistory = document.getElementById("LOGS-HISTORY");
+        logsHistory.innerHTML += `<li>Counter value changed to: ${counter}</li>`;
+      }
+
+      function increment() {
+        counter++;
+        counterValue.textContent = counter;
+        log();
+        console.log(counter, counterValue.textContent);
+        localStorage.setItem("count", counter);
+      }
+
+      function decrement() {
+        counter--;
+        counterValue.textContent = counter;
+        log();
+        console.log(counter, counterValue.textContent);
+        localStorage.setItem("count", counter);
+      }
+
+      incrementBtn.addEventListener("click", increment);
+
+      decrementBtn.addEventListener("click", decrement);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowUp" || event.key === "+") {
+          increment();
+        }
+
+        if (event.key === "ArrowDown" || event.key === "-") {
+          decrement();
+        }
+      });
+    </script>
+  </body>
+</html>
