@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors Demo</title>
+    <link rel="stylesheet" href="styles/selector.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1>CSS Demo</h1>
+
+    <!-- Section 1: Basic Selectors -->
+    <section id="basic-selectors">
+      <h2>Basic Selectors</h2>
+      <p class="highlight" id="unique">This paragraph uses a class selector.</p>
+      <p>This paragraph uses a type selector.</p>
+      <div>This div uses an ID selector.</div>
+    </section>
+
+    <!-- Section 2: Attribute Selectors -->
+    <section id="attribute-selectors">
+      <h2>Attribute Selectors</h2>
+      <a href="https://example.com" target="_blank">External Link</a>
+      <a href="#pseudo">Internal Link</a>
+      <input type="text" placeholder="Type here" />
+      <input type="password" placeholder="Password" />
+    </section>
+
+    <!-- Section 3: Pseudo-classes and Pseudo-elements -->
+    <section id="pseudo">
+      <h2>Pseudo-classes & Pseudo-elements</h2>
+      <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+      </ul>
+      <p>This paragraph has <span>special text</span> inside.</p>
+      <a href="#">Hover over me!</a>
+    </section>
+
+    <!-- Section 4: Combinators -->
+    <section id="combinators">
+      <h2>Combinators</h2>
+      <div class="parent">
+        <p>Direct child paragraph</p>
+        <div>
+          <p>Nested paragraph</p>
+        </div>
+      </div>
+      <h3>Sibling Example</h3>
+      <p class="sample-paragraph">Paragraph 1</p>
+      <p class="sample-paragraph second-item">Paragraph 2 (next sibling)</p>
+      <p class="sample-paragraph">Paragraph 3</p>
+    </section>
+
+    <!-- Section 5: Inheritance-->
+    <section id="inheritance">
+      <h2>Inheritance Example</h2>
+
+      <p>
+        As the body has been set to have a color of blue this is inherited
+        through the descendants.
+      </p>
+      <p>
+        We can change the color by specifically targeting an element with a
+        different style, such as this
+        <span>span</span>.
+      </p>
+    </section>
+
+    <!-- Section 6: Box Model -->
+    <section id="box-model">
+      <h2>CSS Box Model</h2>
+
+      <div class="box-model-demo">This is the content</div>
+
+      <div class="box-model-demo second">This is another box</div>
+
+      <p class="note">
+        Inspect this element in DevTools to see content, padding, border, and
+        margin.
+      </p>
+    </section>
+
+    <!-- Section 6: CSS Units -->
+    <section id="units">
+      <h2>CSS Units (px, em, rem, %, clamp())</h2>
+
+      <div class="units-container">
+        <p class="px-text">This text uses px</p>
+        <p class="em-text">This text uses em</p>
+        <p class="rem-text">This text uses rem</p>
+        <p class="percent-text">This paragraph uses % font-size</p>
+        <p class="clamp-text">This text uses clamp() for fluid sizing</p>
+      </div>
+    </section>
+
+    <section id="media-queries">
+      <h2>Media Queries (Responsive Design)</h2>
+
+      <div class="responsive-box">Resize the browser window to see changes</div>
+    </section>
+
+    <section id="tailwind">
+      <h2>Tailwind css</h2>
+
+      <div
+        class="bg-blue-500/20 text-black p-4 m-4 font-semibold text-lg rounded-xl"
+      >
+        Hello Tailwind
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+/* ============================= */
+/* 1. Basic Selectors             */
+/* ============================= */
+
+/* Type selector - all <p> elements */
+/* p {
+  color: navy;
+} */
+
+/* Cascade:  one that is defined last in the stylesheet is the one that will be used*/
+/* p {
+  color: purple;
+} */
+
+/* Class selector */
+/* Specificity: type < class < ID */
+.highlight {
+  background-color: lightyellow;
+  font-weight: bold;
+  color: crimson;
+}
+
+/* ID selector */
+#unique {
+  border: 2px solid green;
+  padding: 5px;
+}
+
+/* ============================= */
+/* 2. Attribute Selectors         */
+/* ============================= */
+
+/* Select all links with href attribute */
+a[href] {
+  color: darkred;
+}
+
+/* Select links with href starting with "#" */
+a[href^="#"] {
+  color: orange;
+}
+
+/* Select inputs of type password */
+input[type="password"] {
+  border: 2px solid red;
+}
+
+/* ============================= */
+/* 3. Pseudo-classes & elements  */
+/* ============================= */
+
+/* pseudo-classes -> : */
+/* Hover effect */
+a:link {
+  color: brown;
+}
+
+a:visited {
+  color: blueviolet;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: green;
+}
+
+/* First child of a list */
+ul li:first-child {
+  font-weight: bold;
+}
+
+/* Last child of a list */
+ul li:last-child {
+  color: purple;
+}
+
+/* Pseudo-element -> :: */
+/* p span::after {
+  content: " ★";
+  color: gold;
+} */
+
+/* p::first-letter {
+  font-size: 20px;
+} */
+/* ============================= */
+/* 4. Combinators                 */
+/* ============================= */
+
+/* Descendant combinator - any p inside .parent */
+/* .parent p {
+  color: teal;
+} */
+
+/* Child combinator - direct children only */
+/* .parent > p {
+  font-style: italic;
+} */
+
+/* .sample-paragraph.second-item {
+  text-decoration: line-through;
+} */
+
+/* Adjacent sibling combinator */
+/* h3 + p {
+  color: blue;
+  font-weight: bold;
+} */
+
+/* General sibling combinator */
+/* h3 ~ p {
+  font-size: 0.9em;
+  color: gray;
+} */
+
+/* ============================= */
+/* 5. Inheritance                   */
+/* ============================= */
+#inheritance p {
+  color: red;
+}
+
+#inheritance span {
+  color: purple;
+}
+
+/* ============================= */
+/* 6. CSS BOX MODEL              */
+/* ============================= */
+
+/* Start with ONLY this */
+.box-model-demo {
+  background-color: lightgray;
+  border: 1px solid red;
+}
+
+/* Step 1 — Show padding */
+
+/* .box-model-demo {
+  padding: 20px;
+  margin: 10px;
+} */
+
+/* ============================= */
+/* 6. CSS UNITS (basic + advanced) */
+/* ============================= */
+
+.units-container {
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Basic px unit */
+.px-text {
+  font-size: 20px;
+}
+
+/* em unit (relative to parent font-size) */
+/* Parent for em example */
+.units-container {
+  font-size: 10px;
+}
+/* 2 * 10px = 20px */
+.em-text {
+  font-size: 2em;
+}
+
+/* rem unit (relative to root html font-size) */
+html {
+  font-size: 16px;
+}
+
+/* 2 * 16px = 32px */
+.rem-text {
+  font-size: 2rem;
+}
+
+/* percentage for font-size */
+/* 1.5 * parent font size */
+.percent-text {
+  font-size: 150%;
+}
+
+/* Advanced: clamp() for fluid typography */
+/* .clamp-text {
+  font-size: clamp(16px, 3vw, 40px);
+  background-color: lightyellow;
+  padding: 10px;
+  margin-top: 10px;
+} */
+
+/* ============================= */
+/* 8. Media Queries (basic + advanced) */
+/* ============================= */
+
+.responsive-box {
+  padding: 20px;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Basic responsive breakpoints */
+@media (max-width: 900px) {
+  .responsive-box {
+    background-color: orange;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .responsive-box {
+    background-color: red;
+    font-size: 16px;
+  }
+}
+/* Advanced: hover-capable devices only */
+@media (hover: hover) {
+  .responsive-box:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Advanced: prefers dark mode */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+    color: white;
+  }
+
+  .responsive-box {
+    background-color: black;
+    color: lightgreen;
+  }
+} */
+
+/* Advanced: fluid scaling using html font-size */
+/* html {
+  font-size: 16px;
+} */
+
+/* all rem-based sizes scale automatically */
+/* @media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+} */
