@@ -1,0 +1,55 @@
+.board-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 40px 24px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  z-index: 10;
+}
+
+.board-page__logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.board-page__logo span {
+  color: var(--color-accent);
+}
+
+.board-page__main {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding: 32px 40px;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .board-page__header {
+    padding: 20px 20px 16px;
+  }
+
+  .board-page__logo {
+    font-size: 1.2rem;
+  }
+
+  .board-page__main {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    overflow-x: hidden;
+  }
+}

@@ -26,9 +26,9 @@ let users = [new User("John"), new User("Jane")];
 console.log(users);
 
 let admin = new Faculty("Oscar", "DCS");
-// user.sayHi();
-// admin.sayHi();
-// admin.showDepartment();
+users[0].sayHi();
+admin.sayHi();
+admin.showDepartment();
 
 /**
  * Abstraction
@@ -48,7 +48,7 @@ class InputForm {
     // Create button
     this.button = document.createElement("button");
     this.button.textContent = buttonText;
-    this.button.onclick = save;
+    // this.button.onclick = save;
     // Append input and button to container
     this.container.appendChild(this.input);
     this.container.appendChild(this.button);

@@ -11,6 +11,7 @@
 // console.log(2.0);
 // console.log(1 / 0);
 // console.log(-1 / 0);
+// console.log(Number("1l"));
 // console.log(Number("1") / 0);
 // console.log(Number("hello"));
 // console.log("hello" / 0);
@@ -19,20 +20,21 @@
 // /**
 //  * bigint: integer of arbitrary length
 //  */
-// console.log(9007199254749557n);
+// console.log(900719925474955n);
 
 // /**
 //  * string
 //  */
 let str = "Hello! ";
 let str2 = "Single quotes are ok too. ";
-let phrase = `can embed another ${str}`;
+let phrase = `Hello ${str}`;
 // console.log(phrase);
 // let backTicks = `the result is ${1 + 2}`;
-let concat = `${str} ${str2} ${phrase}`;
+// let concat = str + str2;
 
 // console.log(concat);
 // console.log(backTicks);
+
 // /**
 //  * boolean
 //  */
@@ -49,7 +51,7 @@ let concat = `${str} ${str2} ${phrase}`;
 // console.log(Boolean(1));
 // console.log(Boolean(-1));
 // console.log(Boolean(1 / 0));
-// console.log(Boolean(0n));
+// console.log(Boolean(2n));
 // console.log(Boolean(null));
 // console.log(Boolean(undefined));
 // console.log(Boolean("Hello"));
@@ -70,9 +72,9 @@ age = null;
 //  * undefined: unassigned values
 //  */
 
-// let salary = 100;
+let salary = 100;
 // // change the value to undefined
-// salary = undefined;
+salary = undefined;
 // console.log(salary); // "undefined"
 
 // /**

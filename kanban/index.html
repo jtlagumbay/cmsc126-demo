@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="pages/board/board.css" />
+    <link rel="stylesheet" href="components/column/column.css" />
+    <link rel="stylesheet" href="components/card/card.css" />
+    <link rel="stylesheet" href="components/modal/modal.css" />
+  </head>
+  <body>
+    <div class="board-page">
+      <header class="board-page__header" role="banner">
+        <span class="board-page__logo">kan<span>ban</span></span>
+        <p class="visually-hidden">
+          Use arrow keys on a focused card to move it between columns. Press Delete to remove, Enter or E to edit.
+        </p>
+      </header>
+      <main class="board-page__main" id="BOARD" role="main" aria-label="Kanban board columns"></main>
+    </div>
+
+    <script type="module">
+      import { Board } from './pages/board/board.js';
+      const board = new Board();
+      board.init();
+    </script>
+  </body>
+</html>

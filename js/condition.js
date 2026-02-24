@@ -14,9 +14,9 @@ function generation(year) {
  * Arrow Function
  */
 
-// const generationCopy = (year) => {
-//   return year >= 2013 ? "alpha" : year >= 1997 ? "genz" : "oldies";
-// };
+const generationCopy = (year) => {
+  return year >= 2013 ? "alpha" : year >= 1997 ? "genz" : "oldies";
+};
 // console.log(generationCopy(2020));
 
 /**

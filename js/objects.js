@@ -43,8 +43,8 @@ delete user.address;
 // user.greeting();
 
 // for..in
-// for (key in user) {
-//   console.log(user[key]);
+// for (values in user) {
+//   console.log(user[values]);
 // }
 
 // Object.keys, Object.values, Object.entries
@@ -57,13 +57,13 @@ delete user.address;
  */
 
 let admin = user;
-// admin.name = "eric";
+admin.name = "eric";
 
 // console.log(user.name);
 // console.log(admin.name);
 
 // Destructuring
-// let { name, age, ...rest } = user;
+let { name, age, ...rest } = user;
 // console.log(name, age);
 
 // console.log(rest);
@@ -76,23 +76,23 @@ let admin = user;
  * copied by reference
  */
 
-let fruits1 = ["apple", "orange", "banana", "watermelon"];
+let fruits1 = ["apple", "orange", "watermelon", "banana"];
 
 // .length
-// console.log(fruits1.length)
+// console.log(fruits1.length);
 
 // index, at,
-// console.log(fruits1.lastIndexOf("apple"));
+// console.log(fruits1.indexOf("apple"));
 // console.log(fruits1.at(1));
 // console.log(fruits1[1]);
 
 // push, shift, unshift, pop
-// fruits1.pop();
+// fruits1.unshift("banana");
 // console.log(fruits1);
 
 // for..of
-// for (let i = 0; i < fruits1.length; i++) {
-//   console.log(fruits1[i]);
+// for (fruit of fruits1) {
+//   console.log(fruit);
 // }
 
 // comparison
@@ -102,8 +102,9 @@ let fruits2 = ["apple", "orange"];
 // console.log(fruits1 == fruits2);
 
 // splice
-// fruits1.splice(1, 2);
+// let fave = fruits1.splice(1, 2);
 // console.log(fruits1);
+// console.log(fave);
 
 // concat
 // let fruits3 = fruits1.concat(fruits2);
@@ -114,7 +115,7 @@ let fruits2 = ["apple", "orange"];
 
 // .filter
 const removeAppleAndOrange = (fruit) => {
-  return fruit != "apple" && fruit != "orange";
+  return true;
 };
 let filteredFruits1 = fruits1.filter(removeAppleAndOrange);
 // console.log(fruits1);
@@ -138,22 +139,18 @@ const newFruits = fruits1.map((fruit, index) => {
  * .parse
  */
 const USER_KEY = "currentUser";
-localStorage.setItem(USER_KEY, user);
-// console.log(user);
-// console.log(localStorage.getItem(USER_KEY));
 
-// let userJson = JSON.stringify(user);
+let userJson = JSON.stringify(user);
 // console.log(userJson);
 // console.log(typeof userJson);
-// localStorage.setItem(USER_KEY, userJson);
+localStorage.setItem(USER_KEY, userJson);
 
 // console.log(localStorage.getItem(USER_KEY));
 
-// let userRaw = localStorage.getItem(USER_KEY);
-// console.log(userRaw);
+let userRaw = localStorage.getItem(USER_KEY);
 
-// let userParsed = JSON.parse(userRaw);
-// console.log(userParsed.name);
+let userParsed = JSON.parse(userRaw);
+console.log(userParsed.name);
 
 /**
  * try catch
@@ -161,13 +158,13 @@ localStorage.setItem(USER_KEY, user);
 
 function saveUser() {
   try {
-    localStorage.setItem("user");
-    console.log("saved");
+    // localStorage.setItem("user");
+    // console.log("saved");
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 
-  console.log("done");
+  // console.log("done");
 }
 
 saveUser();

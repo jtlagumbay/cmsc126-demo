@@ -224,6 +224,9 @@ html {
 }
 
 /* Advanced: prefers dark mode */
+body {
+}
+
 /* @media (prefers-color-scheme: dark) {
   body {
     background: #222;
