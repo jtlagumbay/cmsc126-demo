@@ -68,10 +68,11 @@ if (age >= 25) {
     let type;
 
     type = 'adult'
-    // console.log(valid, type)
+    console.log(valid, type)
 }
 
-// console.log(valid) // ReferenceError: type is not defined
+console.log(valid)
+// console.log(type)// ReferenceError: type is not defined
 
 // If a code block is inside a function, then var becomes a function-level variable:
 // var declarations are processed when the function starts
@@ -86,7 +87,7 @@ function sayHi() {
   console.log(phrase); // works
 }
 
-// sayHi();
+sayHi();
 // console.log(phrase); // ReferenceError: phrase is not defined
 
 

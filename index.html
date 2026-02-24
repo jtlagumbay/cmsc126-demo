@@ -19,11 +19,11 @@
     <title>Counter</title>
     <!-- <link rel="icon" type="image/png" href="logo.png" /> -->
 
-    <style>
+    <!-- <style>
       .counter-btn {
         color: red;
       }
-    </style>
+    </style> -->
   </head>
 
   <!-- The <body> element contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else. At the moment it only contains a single <img> element, but we'll add more content later on.
@@ -38,7 +38,8 @@
     <ol id="LOGS-HISTORY"></ol>
 
     <script>
-      let counter = localStorage.getItem("count") || 0;
+      const COUNTER_VALUE = "counter";
+      let counter = localStorage.getItem(COUNTER_VALUE) || 0;
       const counterValue = document.getElementById("COUNTER-VALUE");
       counterValue.textContent = counter;
 
@@ -48,6 +49,7 @@
       function log() {
         const logsHistory = document.getElementById("LOGS-HISTORY");
         logsHistory.innerHTML += `<li>Counter value changed to: ${counter}</li>`;
+        localStorage.setItem(COUNTER_VALUE, counter);
       }
 
       function increment() {
@@ -55,7 +57,6 @@
         counterValue.textContent = counter;
         log();
         console.log(counter, counterValue.textContent);
-        localStorage.setItem("count", counter);
       }
 
       function decrement() {
@@ -63,7 +64,6 @@
         counterValue.textContent = counter;
         log();
         console.log(counter, counterValue.textContent);
-        localStorage.setItem("count", counter);
       }
 
       incrementBtn.addEventListener("click", increment);

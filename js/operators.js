@@ -4,8 +4,8 @@
 //  */
 
 let total = 10 - 5;
-let debt = ++total;
-// console.log(total, debt);
+let debt = total++;
+console.log(total, debt);
 // console.log(5 % 2);
 // console.log(8 % 3);
 // console.log(8 % 4);
@@ -27,7 +27,7 @@ let debt = ++total;
 // /**
 //  * logical operators
 //  *  */
-// // &&, ||, !=, ==,
+// // &&, ||, !=, ==
 let number1 = 5,
   number2 = 10;
 // console.log(number1 > 10 || number1 <= 20);
@@ -41,8 +41,8 @@ let number1 = 5,
 let user;
 // user = getUser();
 let effectiveUser = user ?? "Anonymous";
-// console.log(effectiveUser);
+console.log(effectiveUser);
 
 // // Precendence
 let result = (typeof 3 + 2 ** 3 * 4 > 50 && !false) || "5" - 1 + 2 * 3;
-console.log(result);
+// console.log(result);
